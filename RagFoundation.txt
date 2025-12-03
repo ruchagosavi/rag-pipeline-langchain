@@ -1,0 +1,149 @@
+# RAG and Langchain Foundation
+
+---
+
+## 1. What is LangChain?
+
+LangChain is a Python framework designed to make building applications with large language models (LLMs) easy.
+
+It acts like a toolkit for AI applications. It helps you:
+
+* Structure prompts so the AI knows what to answer
+* Maintain chat history so conversations feel natural
+* Retrieve relevant information from documents
+* Parse AI output into structured formats your program can use
+
+LangChain organizes AI interactions so they are more powerful and reliable.
+
+---
+
+## 2. PromptTemplate
+
+A PromptTemplate is like a fill-in-the-blank sheet for the AI. For example:
+
+* “Explain {topic} in simple words”
+* Here, {topic} is a variable you can change dynamically
+
+Why it is useful:
+
+* You don’t have to write new prompts every time
+* You can send the same structure with different topics
+* It keeps prompts consistent and clean
+
+PromptTemplates are essentially reusable instructions for the AI.
+
+---
+
+## 3. ChatPromptTemplate
+
+When building a chatbot, you need to handle multiple roles and messages. ChatPromptTemplate helps structure conversations:
+
+* System message: defines AI behavior (for example, “You are a helpful assistant”)
+* Human messages: represent user questions or input
+* AI messages: store previous AI responses
+
+This structure ensures the conversation is organized and the AI understands context.
+
+---
+
+## 4. MessagesPlaceholder
+
+For meaningful conversations, the AI needs to remember previous messages. MessagesPlaceholder provides a slot in your chat template where chat history is automatically inserted.
+
+Why it is important:
+
+* Without it, the AI forgets previous messages
+* With it, AI can answer follow-up questions correctly
+* Works like a notepad for conversation memory
+
+---
+
+## 5. Output Parsers
+
+LLMs usually return plain text, but sometimes you need structured data. Output parsers convert AI responses into usable formats:
+
+* String Parser: simple text output
+* JSON Parser: converts AI response into a dictionary
+* Pydantic Parser: converts AI response into a typed Python object
+* Regex or Custom Parser: extracts specific patterns
+
+This ensures:
+
+* AI output is predictable
+* Your program can use AI responses directly
+* Essential for retrieval-augmented generation (RAG) pipelines
+
+---
+
+## 6. Embeddings: Teaching AI to Understand Text
+
+Embeddings convert text into numeric representations, or vectors.
+
+* Each word, sentence, or document becomes a vector
+* Similar texts have vectors closer together in a multi-dimensional space
+* Think of embeddings as points on a map: “Cat” and “Dog” are close; “Cat” and “Car” are far
+
+Why embeddings are important:
+
+* AI can search for relevant information efficiently
+* Enables semantic search, not just keyword matching
+* Forms the foundation of RAG pipelines
+
+---
+
+## 7. Vector Stores: Organizing Embeddings
+
+Vector stores are specialized databases for embeddings.
+
+* Store vectors and retrieve the closest ones quickly
+* Support similarity searches, even when exact words don’t match
+* Examples: FAISS, Pinecone, Milvus
+
+Think of a vector store as a library map:
+
+* Each document has a coordinate (embedding)
+* When you ask a question, the AI finds the nearest documents to your query
+
+---
+
+## 8. FAISS: Fast Vector Search
+
+FAISS (Facebook AI Similarity Search) is a popular vector store.
+
+Why FAISS is useful:
+
+* Optimized for speed and scalability
+* Can handle millions of vectors efficiently
+* Supports exact and approximate nearest neighbor searches
+
+FAISS organizes embeddings into indexes for efficient search:
+
+* IndexFlatL2: simple exact search using Euclidean distance
+* IndexIVFFlat: approximate search using clusters, faster for large datasets
+* IndexHNSWFlat: hierarchical search for very large datasets
+
+FAISS uses distances to determine similarity:
+
+* L2 (Euclidean Distance): straight-line distance, lower is closer
+* Inner Product (Dot Product): measures vector alignment, higher is closer
+* Cosine Similarity: angle-based similarity, commonly used for text embeddings
+
+Distance choice affects which documents are retrieved as most relevant.
+
+---
+
+## 9. Putting it All Together
+
+The typical LangChain workflow looks like this:
+
+* Convert text or documents into embeddings (numeric vectors)
+* Store embeddings in a vector store such as FAISS for fast retrieval
+* Convert user query into an embedding
+* Search FAISS for the closest document embeddings
+* Use retrieved documents as context for the LLM to generate an answer
+
+This forms the basis of a RAG pipeline, giving the AI a memory of documents and enabling more accurate responses.
+
+---
+
+

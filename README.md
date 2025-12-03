@@ -11,7 +11,8 @@ It is designed for beginners to understand how to use:
 - **MessagesPlaceholder**
 - **Output Parsers**
 - **Basic conversation with Ollama LLM**
-
+- **Embeddings**
+- **Vector Stores**
 ---
 
 ## 🔹 Installation
