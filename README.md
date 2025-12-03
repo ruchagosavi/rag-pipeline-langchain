@@ -1,7 +1,7 @@
 # rag-pipeline-langchain
 A complete from-scratch implementation of a modern RAG (Retrieval-Augmented Generation) pipeline using LangChain. This project demonstrates end-to-end AI workflow automation — including document ingestion, text chunking, embeddings generation, vector store indexing, retrieval orchestration, and LLM-powered responses.
 
-# LangChain Basics with Ollama
+# LangChain and RAG Basics with Ollama
 
 This repository contains simple examples to get started with **LangChain** and **Ollama local LLMs**.  
 It is designed for beginners to understand how to use:
@@ -18,7 +18,8 @@ It is designed for beginners to understand how to use:
 ## 🔹 Installation
 
 1. Make sure you have Python 3.12+ installed.
-2. Install the required packages:
+2. Make sure you have ollama installed locally.
+3. Install the required packages:
 
 ```bash
 pip install -r requirements.txt
