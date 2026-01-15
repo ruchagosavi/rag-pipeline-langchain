@@ -9,3 +9,5 @@ tiktoken
 sentence-transformers
 fastapi
 uvicorn
+llama-cpp-python
+langchain-ollama
