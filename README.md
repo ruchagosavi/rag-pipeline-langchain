@@ -1,12 +1,9 @@
 🚨 RiskRadar – Banking Risk Analysis using RAG & LLMs
 
-Author & Copyright © 2026 Rucha Gosavi
-All rights reserved. This project and documentation are original work.
-Reuse is allowed only with proper credit.
 
 📌 Overview
 
-RiskRadar is a production-style Retrieval-Augmented Generation (RAG) system designed to analyze business risk factors for banking and financial use cases.
+RiskRadar is a Retrieval-Augmented Generation (RAG) system designed to analyze business risk factors for banking and financial use cases.
 
 Instead of relying on generic LLM answers, RiskRadar:
 
