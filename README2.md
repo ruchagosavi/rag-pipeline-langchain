@@ -23,3 +23,7 @@ It is designed for beginners to understand how to use:
 
 ```bash
 pip install -r requirements.txt
+npx create react-app rag-frontend
+cd rag-frontend
+npm start
+npm install boostrap
